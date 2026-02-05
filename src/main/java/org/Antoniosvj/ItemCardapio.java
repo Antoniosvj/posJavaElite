@@ -5,6 +5,7 @@ public class ItemCardapio {
     //atributos são as características
     long id;
     String nome;
+    String descricao;
     boolean emPromocao;
     double preco;
     double precoComDesconto;
