@@ -1,5 +1,5 @@
 package org.Antoniosvj;
-
+import java.util.ArrayList;
 public class Cardapio {
     ItemCardapio[] itens;
 
@@ -60,6 +60,17 @@ public class Cardapio {
             if (preco < menorPreco) menorPreco = preco;
         }
         return menorPreco;
-
     }
+
+    ItemCardapio[] imprimeItensPorCategoria(CategoriaCardapio categoria) {
+        ArrayList<ItemCardapio> lista = new ArrayList<>();
+
+        for (ItemCardapio item : itens) {
+            if (item.categoria == categoria) {
+                lista.add(item);
+            }
+        }
+        return lista.toArray(new ItemCardapio[0]);
+    }
+
 }

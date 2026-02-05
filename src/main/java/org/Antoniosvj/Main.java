@@ -35,5 +35,13 @@ public class Main {
         IO.println("Soma dos preços: " + cardapio.obtemSomaDosPrecos());
         IO.println("Total de itens em promoção: " + cardapio.obtemTotalItensEmPromocao());
         IO.println("Menor preço: " + cardapio.obtemMenorPreco());
+
+        IO.println("---EXERCICIO---");
+        IO.println("Imprimir item por categoria:");
+        ItemCardapio[] itens = cardapio.imprimeItensPorCategoria(CategoriaCardapio.BEBIDAS);
+        for(ItemCardapio item: itens){
+            IO.println("Nome: " + item.nome);
+
+        }
     }
 }
