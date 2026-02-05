@@ -9,30 +9,11 @@ public class ItemCardapio {
     boolean emPromocao;
     double preco;
     double precoComDesconto;
-    int categoria;
+    CategoriaCardapio categoria;
 
     //metodos
     double calculaPorcentagemDesconto(){
         return (preco - precoComDesconto) / preco;
-    }
-
-    String obtemCategoria(){
-        String nomeCategoria;
-        switch (categoria){
-            case 1:
-                nomeCategoria = "Bebidas";
-                break;
-            case 2:
-                nomeCategoria = "Pratos Principais";
-                break;
-            case 3:
-                nomeCategoria = "Sobremesa";
-                break;
-            default:
-                nomeCategoria = "Não existe...";
-                break;
-        }
-        return nomeCategoria;
     }
 
     void definePromocao(double precoComDesconto){
@@ -40,8 +21,12 @@ public class ItemCardapio {
         this.precoComDesconto = precoComDesconto;
     }
 
+    CategoriaCardapio obtemCategoria(){
+        return categoria;
+    }
+
     //construtor
-    ItemCardapio(long id, String nome, String descricao, double preco, int categoria){
+    ItemCardapio(long id, String nome, String descricao, double preco, CategoriaCardapio categoria){
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;

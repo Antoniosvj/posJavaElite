@@ -4,41 +4,36 @@ package org.Antoniosvj;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        /*
-        ItemCardapio item1 = new ItemCardapio();
-        item1.id = 1;
-        item1.nome = "Refresco do Chaves";
-        item1.descricao = "Suco de limão que parece tamarindo e tem gosto de groselia";
-        item1.emPromocao = false;
-        item1.preco = 1.99;
-        item1.categoria = 1;
-        */
-        ItemCardapio item1 = new ItemCardapio(1, "Refresco do Chaves", "Suco de limão que parece tamarindo e tem gosto de groselia", 1.99, 1);
-        /*
-        ItemCardapio item2 = new ItemCardapio();
-        item2.id = 2;
-        item2.nome = "Sanduiche de presunto do Chaves";
-        item2.descricao = "Sanduiche de presunto simples";
-        item2.emPromocao = true;
-        item2.preco = 3.50;
-        item2.precoComDesconto = 2.99;
-        item2.categoria = 2;
 
+        Cardapio cardapio = new Cardapio();
 
-        *
-        * IO.println("Nome: " + item2.nome);
-        double porcentagemDesconto = item2.calculaPorcentagemDesconto();
-        IO.println("Porcentagem de desconto? " + porcentagemDesconto);
+        //lê o que o usuario digitou
+        String linha = IO.readln("Digite um id de um item do cardápio: ");
 
-        IO.println("Categoria: " + item2.obtemCategoria());
-        * */
+        //pegue a linha que o usuario digitar
+        long idSelecionado = Long.parseLong(linha);
 
-        ItemCardapio item2 = new ItemCardapio(2, "Sanduiche de presunto do Chaves","Sanduiche de presunto simples", 3.50, 2 );
-        item2.definePromocao(2.99);
-        IO.println("Item " + item2.nome + " está em promoção... Preço R$" + item2.precoComDesconto);
+        ItemCardapio itemSelecionado = null;
+        for(ItemCardapio item: cardapio.itens){
+            if(item.id == idSelecionado){
+                itemSelecionado = item;
+                break;
+            }
+        }
+        IO.println("=== Item do Cardápio ===");
+        IO.println("Dados do item de id: "+ itemSelecionado.id);
+        IO.println("Nome: " + itemSelecionado.nome);
+        IO.println("Descrição: " + itemSelecionado.descricao);
+        IO.println("Categoria: " + itemSelecionado.obtemCategoria());
+        if(itemSelecionado.emPromocao){
+            IO.println("Preco de R$" + itemSelecionado.preco + " por R$" + itemSelecionado.precoComDesconto);
+        } else{
+            IO.println("Preço: R$" + itemSelecionado.preco);
+        }
 
-        ItemCardapio item3 = new ItemCardapio(3, "Sorvete", "Sorvete bem gelado", 5.00, 3);
-
-        //IO.println("Nome: " + item3.nome);
+        IO.println("========================================");
+        IO.println("Soma dos preços: " + cardapio.obtemSomaDosPrecos());
+        IO.println("Total de itens em promoção: " + cardapio.obtemTotalItensEmPromocao());
+        IO.println("Menor preço: " + cardapio.obtemMenorPreco());
     }
 }
