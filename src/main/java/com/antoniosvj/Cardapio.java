@@ -1,10 +1,12 @@
-package org.Antoniosvj;
+package com.antoniosvj;
+import com.antoniosvj.isento.ItemCardapioIsento;
+
 import java.util.ArrayList;
 public class Cardapio {
     ItemCardapio[] itens;
 
     Cardapio(){
-        ItemCardapio item1 = new ItemCardapio(1, "Refresco do Chaves", "Suco de limão que parece tamarindo e tem gosto de groselia", 1.99, CategoriaCardapio.BEBIDAS);
+        ItemCardapio item1 = new ItemCardapioBedida(1, "Refresco do Chaves", "Suco de limão que parece tamarindo e tem gosto de groselia", 1.99, CategoriaCardapio.BEBIDAS);
 
         ItemCardapio item2 = new ItemCardapio(2, "Sanduiche de presunto do Chaves","Sanduiche de presunto simples, mas feito com muito amor", 3.50, CategoriaCardapio.PRATOS_PRINCIPAIS );
         item2.definePromocao(2.99);
@@ -15,13 +17,13 @@ public class Cardapio {
         ItemCardapio item4 = new ItemCardapio(4, "Pipoca do Quico", "Balde de pipoca preparado com carinho pelo Quico", 4.99, CategoriaCardapio.PRATOS_PRINCIPAIS);
         item4.definePromocao(3.99);
 
-        ItemCardapio item5 = new ItemCardapio(5, "Água de Jamaica", "Água aromatizada com hibisco e toque de açucar", 2.50, CategoriaCardapio.BEBIDAS);
+        ItemCardapio item5 = new ItemCardapioBedida(5, "Água de Jamaica", "Água aromatizada com hibisco e toque de açucar", 2.50, CategoriaCardapio.BEBIDAS);
         item5.definePromocao(2.00);
 
-        ItemCardapio item6 = new ItemCardapio(6, "Churros do Chaves", "Churros recheado com doce de leite, classico e irresistivel", 4.99, CategoriaCardapio.SOBREMESAS);
+        ItemCardapioIsento item6 = new ItemCardapioIsento(6, "Churros do Chaves", "Churros recheado com doce de leite, classico e irresistivel", 4.99, CategoriaCardapio.SOBREMESAS);
         item6.definePromocao(3.99);
 
-        ItemCardapio item7 = new ItemCardapio(7, "Tacos de Carnitas", "Tacos recheados com carne tnra", 25.90, CategoriaCardapio.PRATOS_PRINCIPAIS);
+        ItemCardapioIsento item7 = new ItemCardapioIsento(7, "Tacos de Carnitas", "Tacos recheados com carne tnra", 25.90, CategoriaCardapio.PRATOS_PRINCIPAIS);
 
         itens = new ItemCardapio[7];
         itens[0] = item1;

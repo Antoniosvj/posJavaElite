@@ -1,9 +1,7 @@
-package org.Antoniosvj;
+package com.antoniosvj;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
+    void main() {
 
         Cardapio cardapio = new Cardapio();
 
@@ -30,6 +28,7 @@ public class Main {
         } else{
             IO.println("Preço: R$" + itemSelecionado.preco);
         }
+        IO.println("Imposto do produto: " + itemSelecionado.calculaImposto());
 
         IO.println("========================================");
         IO.println("Soma dos preços: " + cardapio.obtemSomaDosPrecos());
@@ -41,7 +40,8 @@ public class Main {
         ItemCardapio[] itens = cardapio.imprimeItensPorCategoria(CategoriaCardapio.BEBIDAS);
         for(ItemCardapio item: itens){
             IO.println("Nome: " + item.nome);
-
         }
+
+
     }
 }

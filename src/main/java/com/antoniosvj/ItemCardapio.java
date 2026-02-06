@@ -1,4 +1,4 @@
-package org.Antoniosvj;
+package com.antoniosvj;
 
 // classe funciona como molde do objeto
 public class ItemCardapio {
@@ -16,7 +16,7 @@ public class ItemCardapio {
         return (preco - precoComDesconto) / preco;
     }
 
-    void definePromocao(double precoComDesconto){
+    public void definePromocao(double precoComDesconto){
         this.emPromocao = true;
         this.precoComDesconto = precoComDesconto;
     }
@@ -25,8 +25,21 @@ public class ItemCardapio {
         return categoria;
     }
 
-    //construtor
-    ItemCardapio(long id, String nome, String descricao, double preco, CategoriaCardapio categoria){
+    double calculaImposto() {
+        double imposto;
+        if (emPromocao) {
+            imposto = precoComDesconto *0.1;
+        } else{
+            imposto = preco * 0.1;
+        }
+        return imposto;
+    }
+
+
+    //construtor -> nesse caso apesar de ser protected ele é acessivel a outros itens que sejam
+    // classes filhas dessa classe
+    //mesmo estando em outro pacote
+    protected ItemCardapio(long id, String nome, String descricao, double preco, CategoriaCardapio categoria){
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
