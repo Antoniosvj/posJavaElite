@@ -1,9 +1,14 @@
 package com.antoniosvj;
 
-public class Main {
-    void main() {
+import java.io.IOException;
 
-        Cardapio cardapio = new Cardapio();
+public class Main {
+    void main() throws IOException {
+
+        final String nomeArquivo = IO.readln("Digite o nome do arquivo de itens de cardápio: ");
+
+        Cardapio cardapio = new Cardapio(nomeArquivo);//foi passado o nome do arquivo aqui
+        //como foi lançado uma exceção na main também devemos tratar ela
 
         //lê o que o usuario digitou
         String linha = IO.readln("Digite um id de um item do cardápio: ");

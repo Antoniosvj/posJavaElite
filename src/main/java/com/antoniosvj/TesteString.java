@@ -2,6 +2,7 @@ package com.antoniosvj;
 
 public class TesteString {
     void main(){
+        /*
         String nome = "Antonio Sérgio Viana Júnior";
 
         IO.println(nome.toUpperCase()); //tudo maiusculo
@@ -37,5 +38,7 @@ public class TesteString {
         }
         long fimSB = System.currentTimeMillis();
         IO.println(fimSB - inicioSB);
+
+         */
     }
 }
